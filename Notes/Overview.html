@@ -1,0 +1,726 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Overview</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+/* ============================================
+ * ============ TYPORA lATEX THEME ============
+ * ============================================
+ */
+
+/* userCustom on Windows */
+
+:root {
+
+/* == 字体设置 == */
+
+	/* 基准字体 */
+	--base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10"; /* 备选：Times, "Times New Roman" */
+	--base-Chinese-font: 宋体-简, 华文宋体;
+	--base-font-size: 9.5pt;
+
+	/* 引言字体 */
+	--quote-font: "Latin Modern Roman", "Latin Modern Roman 10", Times, "Times New Roman", 华文仿宋;
+	--quote-font-size: 10pt; /* 这里字体用了10pt,比正文字体稍大 */
+
+	/* 代码字体（代码中的中文会调用ui-font） */
+	--code-font: "Latin Modern Mono", "Latin Modern Mono 10";
+
+	/* 侧边栏字体 */
+	--ui-font: "阿里巴巴普惠体 2.0";
+
+	/* source mode 字体 */
+	--sourceMode-font: "SF Mono", "阿里巴巴普惠体 2.0"; /* 默认调用code-font和ui-font */
+
+	/* 目录字体 */
+	--toc-font: ""; /* 默认调用base-font */
+	--toc-font-size: ""; /* 默认调用base-font-size */
+
+	/* 表格字体 */
+	--table-title-font: ""; /* 默认调用heading-font */
+	--table-font: ""; /* 默认调用base-font */
+
+	/* 标题字体（总设置） */
+	--heading-Latin-font: var(--base-Latin-font); /* 默认调用base-font(bold) */
+	--heading-Chinese-font: 华文黑体;
+
+	/* 标题字体分别设置 */
+		/* 大标题（h1）字体 */
+		--title-Chinese-font: "华文黑体"; 
+		--title-font-size: 18pt;
+		/* h2字体 */
+		--h2-Chinese-font: 华文黑体; 
+		--h2-font-size: 14pt;
+		/* h3字体 */
+		--h3-Chinese-font: "华文黑体";
+		--h3-font-size: 12pt;
+		/* h4字体 */
+		--h4-Chinese-font: 华文楷体;
+		--h4-font-size: 10pt;
+		/* h5字体 */
+		--h5-Chinese-font: 华文仿宋;
+		--h5-font-size: 10pt;
+		/* h6字体 */
+		--h6-Chinese-font: 华文仿宋;
+		--h6-font-size: 9.5pt;
+
+	/* 粗体样式设置 */
+	--strong-weight: 900; /* 加粗风格时使用的字重；400等同于normal，700等同于bold，900等同于heavy */ 
+
+	/* 基础行距 */
+	--base-line-height: 16pt; 
+
+/* == 页面设置 == */
+	/* 打印页边距 */
+	--set-margin: 1.8cm 2cm 1.2cm 2cm !important;
+	/* 参阅 <https://github.com/Keldos-Li/typora-latex-theme/blob/main/README.md#特别注意> */
+
+/* == 控制设置 == */
+	/* 目录中是否显示一级标题 */
+	--toc-show-title: none; 
+}
+/* ============================================
+ * ============ TYPORA lATEX THEME ============
+ * ============================================
+ * THIS PROJECT IS BASED ON THE WORKS OF YFZHAO20 AND DU33169, 
+   WHOSE REPOSITORIES ARE ADRESSED ON 
+   <https://github.com/yfzhao20/Typora-markdown>
+   AND <https://github.com/du33169/typora-theme-essay_cn>,
+   MANY THANKS TO THEM.
+ * "TYPORA LATEX THEME" (MARKDOWN LATEX THEME)
+   IS A THEME FOR TYPORA (OR CSS FOR OTHER MARKDOWN EDITORS),
+   DESIGNED FOR CHINESE UNIVERSITY STUDENTS 
+   USED IN LATEX-STYLED ESSAYS OR EXPERIMENTAL REPORTS.
+ * COPYRIGHT (C) 2021 KELDOS; 
+   REPOSITORY ADDRESS: <https://github.com/Keldos-Li/typora-latex-theme>;
+   LISENCED UNDER GPL v3.0, SEE <https://github.com/Keldos-Li/typora-latex-theme/blob/main/LICENSE>
+ */
+
+/* LaTeX-light on Windows */
+
+@import "";
+
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: var(--base-line-height);
+    /*counter-reset: tableHead 0 imgHead 0;*/
+}
+
+/* 正文区基本属性 */
+#write {
+    font-family: var(--base-Latin-font), var(--base-Chinese-font), serif;
+    font-size: var(--base-font-size);
+    max-width: 21cm;/* A4标准宽度 */
+    background-color: white;
+    /* column-count: 2;
+    column-gap: 25px;
+    column-width: 8cm; 
+    display: inline-block; */
+    /* 这里可以试分栏的，但确实不适合实现 */
+}
+
+strong {
+    font-weight: var(--strong-weight);
+}
+
+@media screen {
+    #write {
+        padding: var(--set-margin);
+        /*border: 0.8px solid #AAC ; /* 添加一个淡蓝色的边框 */
+        box-shadow: 0 0 24px 12px #CCCCCC; /* 页边来一个阴影！！好耶 */
+    }
+}
+
+@media print {
+    #write {
+        padding: 0 !important;
+    }
+    #write a {
+        color: inherit;
+        text-decoration: none;
+    }
+    @page {
+        /* size: A4;  强制A4大小 */
+        margin: 1.8cm 2cm 1.2cm 2cm !important; /* 页边距在这里！！！！！！！！！！！！！！！！ */
+        /* 参阅 <https://github.com/Keldos-Li/typora-latex-theme/blob/main/README.md#特别注意> */
+    }
+}
+
+#write p {
+    text-align: left;
+}
+
+/*
+#write figure:after{
+  counter-increment: tableHead;
+  content: "表" counter(tableHead) " ";
+  text-align:center;
+  width:100%;
+  display:inline-block;
+}*/
+/* 图片，导出PDF时暂时无法显示 */
+/*
+#write .md-image:after{
+  counter-increment: imgHead;
+  content: "图" counter(imgHead) " ";
+  text-align:center;
+  width:100%;
+  display:inline-block;
+}
+*/
+
+/* basic样式采用一般的引言，具有左边框、左缩进 */
+blockquote {
+    font-style: normal;
+    font-family: var(--quote-font), var(--base-Latin-font), var(--base-Chinese-font), -apple-system, serif;
+    font-size: var(--quote-font-size);
+    border-left: 3px solid grey;
+    padding-left: 16px; /* 文字离左边框的距离 */
+    padding-right: 20pt;
+    margin-left: 20px; /* 左边框离页面边的距离 */
+    color: grey;
+}
+
+/*border-width: 0.5pt 0;
+  border-style:solid; 这一行本来使用了上下边框*/
+
+/* 标题属性 */
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+    font-weight: bold; /* 对 Windows 的修改 */
+    font-family: var(--heading-Latin-font), var(--heading-Chinese-font), sans-serif;
+    page-break-after: avoid !important;
+}
+
+#write h1 {
+    font-family: var(--heading-Latin-font), var(--title-Chinese-font), sans-serif;
+    /*font-weight: bold;*/
+    text-align: center;
+    column-span: all;
+    font-size: var(--title-font-size);
+}
+#write h2 {
+    font-family: var(--heading-Latin-font), var(--h2-Chinese-font), sans-serif;
+    font-size: var(--h2-font-size);
+}
+#write h3 {
+    font-family: var(--heading-Latin-font), var(--h3-Chinese-font), sans-serif;
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-font-size);
+}
+#write h4 {
+    font-family: var(--heading-Latin-font), var(--h4-Chinese-font), sans-serif;
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-font-size);
+}
+#write h5 {
+    font-family: var(--heading-Latin-font), var(--h5-Chinese-font), sans-serif;
+    font-size: var(--h5-font-size);
+    line-height: var(--h5-font-size);
+}
+#write h6 {
+    font-family: var(--heading-Latin-font), var(--h6-Chinese-font), sans-serif;
+    font-size: var(--h6-font-size);
+    line-height: var(--h5-font-size); /* 没有写错，为了避免行距太小才这么写 */
+}
+
+
+/* 三线表 */
+#write table {
+    border-top: 1.2pt solid; /* 三线表第一条线宽度 */
+    border-bottom: 1.2pt solid; /* 三线表第二条线宽度 */
+    font-family: var(--table-font), var(--base-Latin-font), var(--base-Chinese-font), serif;
+    /* font-size: var(--base-font-size); */
+    text-align: center;
+    page-break-inside: avoid;
+    border-spacing: 6px;
+    width: auto; /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
+    margin: 0 auto; /* 使表格默认居中；虽然这个代码不好，但好像没别的实现办法 */
+}
+
+#write table td {
+    padding: 2px;
+}
+
+#write table tr {
+    padding: 2px;
+}
+
+#write th {
+    padding: 0px 6px;
+}
+
+/* 表格标题（首行）样式 */
+#write thead {
+    border-bottom: 0.5pt solid; /* 三线表表头的线 */
+    font-family: var(--table-title-font), var(--heading-Latin-font), var(--heading-Chinese-font), serif !important;
+    /* font-size: var(--base-font-size); */
+    font-weight: var(--strong-weight);
+}
+
+hr {
+  border-top: solid 0.7px #EEE;
+}
+
+img {
+    page-break-inside: avoid; /* 避免图片在导出时被断开 */
+}
+
+/* ============ 多级列表样式 ============ */
+ul {
+    list-style: disc; /* 无序列表第一级：实心圆点 */
+}
+
+ul ul {
+    /*list-style: circle;*/
+    list-style: '–　 '; /* 直接用空格代替一部分缩进的调整了我真懒 */
+    /*left: -0.8em;*/
+}
+
+ul ul ul {
+    list-style: "◦　  "; /* 无序列表第三极：小圈 */
+    left: 0.6em;
+}
+
+ol {
+    list-style: decimal;
+    /* 有序列表第一级：数字 */
+}
+
+ol ol {
+    counter-reset: liist;
+    list-style: none;
+}
+ol ol li {
+    counter-increment: liist;
+    position: relative;
+}
+ol ol li::before {
+    content: "("counter(liist, lower-alpha) ")　　"; /* 有序列表第二级：括号加小写字母 */
+    position: absolute;
+    margin-right: 2rem;
+    left: -2.4em;
+}
+
+ol ol ol {
+    counter-reset: liiist;
+    list-style: none;
+    margin: 0;
+}
+ol ol ol li {
+    counter-increment: liiist;
+    position: relative;
+}
+ol ol ol li::before {
+    content: counter(liiist, lower-roman) ".　　　"; /* 有序列表第三级：小写罗马数字 这些后续还要改的可恶*/
+    align-self: flex-end;
+    position: absolute;
+    left: -2.4em;
+    /* -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;*/
+    width: 4em; /* 为了让项目编号是重新用句点对齐而不是左对齐我调试了一整个晚上啊啊啊啊 CSS好难写 */
+    text-align: right;
+}
+
+li {
+    position: relative;
+}
+/* ============ 多级列表样式END ============ */
+
+
+/* 行内代码 */
+p code,
+li code {
+    color: rgb(60, 112, 198);
+    background-color: #fefefe;
+    font-family: var(--code-font), var(--ui-font), monospace;
+    box-sizing: border-box;
+    border-right: 0px;
+    margin: 0 2px 0 2px;
+    padding: 0 2px 0 2px;
+    border-radius: 2px 2px 2px 2px; /* 圆角 */
+    box-shadow: 0 0 1px 1px #c8d3df; /* 阴影 */
+}
+
+/* 代码块样式*/
+#write .CodeMirror-wrap {
+    padding: 10px; /* 当代码太长跨页的时候好像也会有点问题，到时候再改 */
+}
+
+#write .CodeMirror-code pre {
+    font-family: var(--code-font), var(--ui-font), monospace;
+}
+
+/* typora 编写模式 */
+#typora-source {
+    font-family: var(--sourceMode-font), var(--code-font), var(--ui-font), monospace;
+    line-height: 2rem;
+}
+
+/* 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX */
+/* 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题 */
+#write {
+    counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0
+}
+
+#write h1 {
+    counter-reset: h2
+}
+h2 {
+    counter-reset: h3
+}
+h3 {
+    counter-reset: h4
+}
+h4 {
+    counter-reset: h5
+}
+h5 {
+    counter-reset: h6
+}
+
+/* put counter result into headings */
+#write h2:before {
+    counter-increment: h2;
+    content: counter(h2);
+    margin-right: 2rem;
+}
+/** override the default style for focused headings */
+#write h3:before,
+h3.md-focus.md-heading:before {
+    counter-increment: h3;
+    content: counter(h2) "."counter(h3);
+    margin-right: 2rem;
+}
+#write h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h2) "."counter(h3) "."counter(h4);
+    margin-right: 2rem;
+}
+#write h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h2) "."counter(h3) "."counter(h4) "."counter(h5);
+    margin-right: 2rem;
+}
+#write h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    content: counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) "."counter(h6);
+    margin-right: 2rem;
+}
+
+/* 目录 */
+.md-toc-content {
+    margin-left: 2em;
+    counter-reset: toc-h2 toc-h3 toc-h4; /* 修复缺失上级标题时无法递增 */
+    page-break-after: always;
+}
+.md-toc-inner {
+    margin-left: 0 !important;
+    color: black !important;
+}
+.md-toc-item {
+    color: black !important;
+}
+
+/* 目录标题内容属性 */
+.md-toc-h2,
+.md-toc-h3,
+.md-toc-h4,
+.md-toc-h5,
+.md-toc-h6 {
+    font-size: var(--toc-font-size);
+    font-family: var(--toc-font), var(--base-Latin-font), var(--base-Chinese-font), serif;
+}
+.md-toc-h2 {
+    font-weight: var(--strong-weight);
+}
+
+/* 目录标题前 */
+.md-toc-content .md-toc-h1 {
+    display: var(--toc-show-title);
+    counter-reset: toc-h2;
+}
+.md-toc-content .md-toc-h2 {
+    counter-reset: toc-h3;
+}
+.md-toc-content .md-toc-h3 {
+    counter-reset: toc-h4;
+}
+.md-toc-content .md-toc-h4 {
+    counter-reset: toc-h5;
+}
+.md-toc-content .md-toc-h5 {
+    counter-reset: toc-h6;
+}
+.md-toc-content .md-toc-h2:before {
+    counter-increment: toc-h2;
+    content: counter(toc-h2);
+    margin-right: 1rem;
+    font-weight: var(--strong-weight);
+}
+.md-toc-content .md-toc-h3:before {
+    counter-increment: toc-h3;
+    content: counter(toc-h2) "."counter(toc-h3);
+    margin-left: 1.5rem;
+    margin-right: 0.5rem;
+}
+.md-toc-content .md-toc-h4:before {
+    counter-increment: toc-h4;
+    content: counter(toc-h2) "."counter(toc-h3) "."counter(toc-h4);
+    margin-left: 3.5rem;
+    margin-right: 0.5rem;
+}
+.md-toc-content .md-toc-h5:before {
+    counter-increment: toc-h5;
+    content: counter(toc-h2) "."counter(toc-h3) "."counter(toc-h4) "."counter(toc-h5);
+    margin-left: 5.5rem;
+    margin-right: 0.5rem;
+}
+.md-toc-content .md-toc-h6:before {
+    counter-increment: toc-h6;
+    content: counter(toc-h2) "."counter(toc-h3) "."counter(toc-h4) "."counter(toc-h5) "."counter(toc-h6);
+    margin-left: 7.5rem;
+    margin-right: 0.5rem;
+}
+
+/* 侧边大纲标题 */
+.sidebar-content .outline-h1 {
+    counter-reset: outline-h2;
+}
+.sidebar-content .outline-h2 {
+    counter-reset: outline-h3;
+}
+.sidebar-content .outline-h3 {
+    counter-reset: outline-h4;
+}
+.sidebar-content .outline-h4 {
+    counter-reset: outline-h5;
+}
+.sidebar-content .outline-h5 {
+    counter-reset: outline-h6;
+}
+.sidebar-content .outline-h2 .outline-label:before {
+    counter-increment: outline-h2;
+    content: counter(outline-h2) " ";
+}
+.sidebar-content .outline-h3 .outline-label:before {
+    counter-increment: outline-h3;
+    content: counter(outline-h2) "."counter(outline-h3) "  ";
+}
+.sidebar-content .outline-h4 .outline-label:before {
+    counter-increment: outline-h4;
+    content: counter(outline-h2) "."counter(outline-h3) "."counter(outline-h4) "  ";
+}
+.sidebar-content .outline-h5 .outline-label:before {
+    counter-increment: outline-h5;
+    content: counter(outline-h2) "."counter(outline-h3) "."counter(outline-h4) "."counter(outline-h5) "  ";
+}
+
+.sidebar-content {
+    font-family: var(--ui-font); /* 侧边栏的字体修改 */
+    list-style: none;
+}
+
+/* 元数据（如YAML front matter）的背景框 */
+pre.md-meta-block {
+    background: #CCCCCC;
+    padding: 1.4em;
+    font-family: var(--code-font), var(--ui-font), monospace;
+}
+
+/** override the default style for focused headings */
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left: initial;
+    float: none;
+    top: initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=' first-line-indent'><h1><a name="computer-network-overview" class="md-header-anchor"></a><span>Computer Network Overview</span></h1><!-- TOC --><ul><li><p><a href='#1-overview-of-computer-network-计算机网络概述'><span>1. Overview of Computer Network 计算机网络概述</span></a></p><ul><li><p><a href='#11-计算机网络-network'><span>1.1. 计算机网络 network</span></a></p></li><li><p><a href='#12-数据网络分类'><span>1.2. 数据网络分类</span></a></p><ul><li><a href='#121-局域网和广域网的差别'><span>1.2.1. 局域网和广域网的差别</span></a></li><li><a href='#122-局域网设备'><span>1.2.2. 局域网设备</span></a></li><li><a href='#123-广域网设备'><span>1.2.3. 广域网设备</span></a></li><li><a href='#124-局域网设备和广域网设备'><span>1.2.4. 局域网设备和广域网设备</span></a></li></ul></li><li><p><a href='#13-internet-互联网'><span>1.3. Internet 互联网</span></a></p><ul><li><a href='#131-多层isp结构的internet'><span>1.3.1. 多层ISP结构的Internet</span></a></li></ul></li></ul></li><li><p><a href='#2-计算机网络基本概念'><span>2. 计算机网络基本概念</span></a></p><ul><li><p><a href='#21-数据'><span>2.1. 数据</span></a></p><ul><li><a href='#211-数据报'><span>2.1.1. 数据报</span></a></li></ul></li><li><p><a href='#22-协议'><span>2.2. 协议</span></a></p></li><li><p><a href='#23-源地址和目标地址'><span>2.3. 源地址和目标地址</span></a></p></li><li><p><a href='#24-传输介质'><span>2.4. 传输介质</span></a></p></li><li><p><a href='#25-数据带宽bandwith'><span>2.5. 数据带宽(BandWith)</span></a></p></li><li><p><a href='#26-通量thoughput'><span>2.6. 通量(Thoughput)</span></a></p></li></ul></li><li><p><a href='#3-osi-reference-model-open-system-interconnection-参考模型'><span>3. OSI Reference Model (Open System Interconnection 参考模型)</span></a></p><ul><li><p><a href='#31-层次模型'><span>3.1. 层次模型</span></a></p></li><li><p><a href='#32-为什么设计层次模型'><span>3.2. 为什么设计层次模型?</span></a></p></li><li><p><a href='#33-43模型'><span>3.3. 4+3模型</span></a></p></li><li><p><a href='#34-各层次介绍'><span>3.4. 各层次介绍</span></a></p><ul><li><a href='#341-layer-1the-physical-layer-物理层'><span>3.4.1. Layer 1:The Physical Layer 物理层</span></a></li><li><a href='#342-layer-2the-data-link-layer-数据链路层'><span>3.4.2. Layer 2:The Data Link Layer 数据链路层</span></a></li><li><a href='#343-layer-3the-network-网络层'><span>3.4.3. Layer 3:The NetWork 网络层</span></a></li><li><a href='#344-layer-4the-transport-layer-运输层'><span>3.4.4. Layer 4:The Transport Layer 运输层</span></a></li><li><a href='#345-the-layer-5the-session-layer-会话层'><span>3.4.5. The Layer 5:The Session Layer 会话层</span></a></li><li><a href='#346-the-layer-6the-presentation-layer-表示层'><span>3.4.6. The Layer 6:The Presentation Layer 表示层</span></a></li><li><a href='#347-layer-7-the-application-layer-应用层'><span>3.4.7. Layer 7: The Application Layer 应用层</span></a></li></ul></li><li><p><a href='#35-protocols-on-iso-layers-iso模型下对应的协议内容'><span>3.5. Protocols on ISO layers ISO模型下对应的协议内容</span></a></p></li><li><p><a href='#36-data-encapsulation-数据封装'><span>3.6. Data Encapsulation 数据封装</span></a></p></li><li><p><a href='#37-peer-to-peer-communications-点对点通信'><span>3.7. Peer-to-Peer Communications 点对点通信</span></a></p></li></ul></li><li><p><a href='#4-tcpip-model'><span>4. TCP/IP Model</span></a></p><ul><li><p><a href='#41-四层模型-tcpip-model'><span>4.1. 四层模型 TCP/IP Model</span></a></p><ul><li><a href='#411-第四层application-layer-应用层'><span>4.1.1. 第四层：Application Layer 应用层</span></a></li><li><a href='#412-第三层transport-layer-传输层'><span>4.1.2. 第三层：Transport Layer 传输层</span></a></li><li><a href='#413-第二层internet-layer-互联网层'><span>4.1.3. 第二层：Internet Layer 互联网层</span></a></li><li><a href='#414-第一层network-access-layer-网络接入层'><span>4.1.4. 第一层：Network Access Layer 网络接入层</span></a></li></ul></li><li><p><a href='#42-常见的tcpip协议'><span>4.2. 常见的TCP/IP协议</span></a></p></li><li><p><a href='#43-tcpip-模型-和-osi-模型的相似点'><span>4.3. TCP/IP 模型 和 OSI 模型的相似点</span></a></p></li><li><p><a href='#44-tcpip-模型-和-osi-模型的不同点'><span>4.4. TCP/IP 模型 和 OSI 模型的不同点</span></a></p></li></ul></li><li><p><a href='#5-网络拓扑'><span>5. 网络拓扑</span></a></p><ul><li><a href='#51-bus-总线型拓扑'><span>5.1. Bus 总线型拓扑</span></a></li><li><a href='#52-ring-环形拓扑'><span>5.2. Ring 环形拓扑</span></a></li><li><a href='#53-dual-ring-双环拓扑'><span>5.3. Dual Ring 双环拓扑</span></a></li><li><a href='#54-star-星型拓扑'><span>5.4. Star 星型拓扑</span></a></li><li><a href='#55-tree-树形拓扑结构'><span>5.5. Tree 树形拓扑结构</span></a></li><li><a href='#56-completemesh-渔网型拓扑'><span>5.6. Complete(Mesh) 渔网型拓扑</span></a></li><li><a href='#57-cellular-蜂窝型拓扑'><span>5.7. Cellular 蜂窝型拓扑</span></a></li></ul></li><li><p><a href='#6-network-devices-网络设备'><span>6. Network Devices 网络设备</span></a></p><ul><li><p><a href='#61-拓扑的局域网设备'><span>6.1. 拓扑的局域网设备</span></a></p></li><li><p><a href='#62-nics---layer2-网卡-network-interface-controller网络终端设备'><span>6.2. NICs - Layer2 网卡 Network Interface Controller(网络终端设备)</span></a></p></li><li><p><a href='#63-media--layer-1-介质-网络中间设备'><span>6.3. Media – Layer 1 介质 网络中间设备</span></a></p></li><li><p><a href='#64-repeaters--layer-1-中继器-网络中间设备'><span>6.4. Repeaters – Layer 1 中继器 网络中间设备</span></a></p></li><li><p><a href='#65-hubs---layer-1-集线器-网络中间设备'><span>6.5. Hubs - Layer 1 集线器 网络中间设备</span></a></p><ul><li><a href='#651-中继器和集线器的不同'><span>6.5.1. 中继器和集线器的不同</span></a></li></ul></li><li><p><a href='#66-bridges--layer-2-网桥-网络中间设备'><span>6.6. Bridges – Layer 2 网桥 网络中间设备</span></a></p></li><li><p><a href='#67-switches--layer-2-交换机-网络中间设备'><span>6.7. Switches – Layer 2 交换机 网络中间设备</span></a></p></li><li><p><a href='#68-routers--layer-3-路由器-网络中间设备'><span>6.8. Routers – Layer 3 路由器 网络中间设备</span></a></p></li><li><p><a href='#69-网络设备和osi层次模型演变evolution'><span>6.9. 网络设备和OSI层次模型演变(Evolution)</span></a></p></li></ul></li></ul><!-- /TOC --><h1><a name="overview-of-computer-network-计算机网络概述" class="md-header-anchor"></a><span>Overview of Computer Network 计算机网络概述</span></h1><h2><a name="定义" class="md-header-anchor"></a><span>定义</span></h2><ol><li><p><span>什么是网络？网络是由物体、设备或人组成的错综复杂(intricately)的连接系统。</span></p></li><li><p><span>计算机网络:是网络的一种</span></p><ul><li><span>目的:共享资源，资源类型比较广泛。</span></li><li><span>传送的类型是</span><strong><span>二进制</span></strong><span>数据流。</span></li></ul></li><li><p><span>企业也可以构成网络:随着公司的扩张，连接不同站点的网络的需求变得非常重要</span></p></li><li><p><span>计算机网络</span><strong><span>标准和规范</span></strong><span>组成当前计算机网络的形式。</span></p></li></ol><h2><a name="数据网络分类" class="md-header-anchor"></a><span>数据网络分类</span></h2><ol><li><p><code>LAN(Local Area Networks)</code><span> 局域网：常用广播方式通信</span></p></li><li><p><code>WAN(Wide Area Networks)</code><span>广域网</span></p><ul><li><span>先于LAN网络产生</span></li><li><span>常用点对点通信</span></li></ul></li><li><p><span>网络抽象模型</span></p><ul><li><code>node</code><span>：结点</span></li><li><code>link</code><span>：链路</span></li></ul></li></ol><p><img src="Overview.assets/1.png" referrerpolicy="no-referrer"></p><h3><a name="局域网和广域网的差别" class="md-header-anchor"></a><span>局域网和广域网的差别</span></h3><h4><a name="局域网lanlocal-area-networks" class="md-header-anchor"></a><span>局域网，LAN，Local Area Networks</span></h4><ul><li><span>作用范围比较窄</span></li><li><span>多用户同时复用链路介质</span></li><li><span>网络性能比较高(一般是一个公司来管理处理，可以达到Gbps甚至是100Gbps)</span></li><li><span>出错率相对比较容易控制(低)</span></li></ul><h4><a name="广域网wanwide-area-networks" class="md-header-anchor"></a><span>广域网，WAN，Wide Area Networks</span></h4><ul><li><span>在比较大的地理范围上进行连接 </span></li><li><span>要么串行连接(serial links)，要么光链路连接(optical links)</span></li><li><span>传统上，传输速率比较低，因为一般是多公司管理，标准和介质等都不同 </span></li><li><span>出错率相对比较高</span></li></ul><h3><a name="局域网设备" class="md-header-anchor"></a><span>局域网设备</span></h3><p><img src="Overview.assets/2.png" style="zoom:50%;" /></p><h4><a name="hub-集线器工作在第一层" class="md-header-anchor"></a><span>Hub 集线器：工作在第一层</span></h4><ul><li><span>多端口中继器(Reapter)，连接PC</span></li><li><span>重复信号</span></li></ul><h4><a name="bridge-网桥工作在第二层" class="md-header-anchor"></a><span>Bridge 网桥：工作在第二层</span></h4><ul><li><span>局域网分段（隔离冲突域）</span></li><li><span>进行MAC地址的计算</span></li></ul><h4><a name="switch-交换机多端口网桥工作在第二层" class="md-header-anchor"></a><span>Switch 交换机，多端口网桥，工作在第二层</span></h4><ul><li><span>多端口网桥</span></li><li><span>全带宽</span></li><li><span>大规模集成电路实现（硬件转发）：相对于网桥的优点</span></li></ul><h4><a name="router-路由器工作在第三层" class="md-header-anchor"></a><span>Router 路由器:工作在第三层</span></h4><ul><li><span>路径选择</span></li><li><span>分组交换</span></li></ul><h3><a name="广域网设备" class="md-header-anchor"></a><span>广域网设备</span></h3><h4><a name="路由器" class="md-header-anchor"></a><span>路由器</span></h4><ol><li><span>路径选择</span></li><li><span>分组交换</span></li></ol><h4><a name="modem-csudsu-tant1点对点连接终端设备" class="md-header-anchor"></a><span>Modem CSU/DSU TA/NT1(点对点连接终端设备)</span></h4><ul><li><span>功能一：有CSU的功能:将终端用户和本地数字电话环路相连接</span></li><li><span>功能二：有DSU的功能:把终端上物理层适配到通讯层上：模拟信号到数字信号进行转换</span></li><li><span>TA/NT1:终端适配器和网络适配器</span></li><li><span>模拟到数字</span></li><li><span>远端局域网链接</span></li></ul><h3><a name="局域网设备和广域网设备" class="md-header-anchor"></a><span>局域网设备和广域网设备</span></h3><ol><li><p><span>局域网在课程重点中大多以以太网的形式出现，比较规范，课程重点</span></p><ul><li><span>Ethernet 以太网</span></li><li><span>the most popular service 最受欢迎的设备</span></li></ul></li><li><p><span>广域网:各种标准会比较复杂(以下为带宽从低到高进行排序)</span></p><ul><li><span>Modem</span></li><li><span>ISDN</span></li><li><span>DSL</span></li><li><span>Frame Relay</span></li><li><span>ATM</span></li><li><span>T1/E1</span></li><li><span>T3</span></li><li><span>STS-1, STS-3, STS-48 (SONET/SDH)最高速广域网标准</span></li></ul></li></ol><h2><a name="互联网" class="md-header-anchor"></a><span>互联网</span></h2><h3><a name="internet互连网" class="md-header-anchor"></a><span>internet:</span><strong><span>互连网</span></strong></h3><p><span>通用名词，泛指由多个计算机网络互连而成的网络:网络的节点也是网络(和互联网的区别)</span></p><h4><a name="internet互联网" class="md-header-anchor"></a><span>Internet:</span><strong><span>互联网</span></strong></h4><p><span>专用名词，指当前全球最大的、开放的、由众多网络互相连接而成的特定计算机网络。</span></p><ul><li><span>全球最大的开放性广域网</span></li><li><span>TCP/IP作为参考标准</span></li><li><span>从ARPNET发展出来</span></li></ul><p><img src="Overview.assets/3.png" referrerpolicy="no-referrer"></p><ol><li><span>ARPAnet:为防止和攻击下核攻击下电信线路中断</span></li></ol><h3><a name="多层isp结构的internet" class="md-header-anchor"></a><span>多层ISP结构的Internet</span></h3><h4><a name="互联网服务提供商ispinternet-service-providers" class="md-header-anchor"></a><span>互联网服务提供商(ISP,Internet Service Providers)</span></h4><p><img src="Overview.assets/4.png" referrerpolicy="no-referrer"></p><ol><li><span>第一层ISP是核心层，主要负责远距离连通。</span></li><li><span>这种多层ISP结构可以将大量的流量本地化</span></li><li><span>NAP(Network Access Point):第一二层之间的接入点,也可以是google(大公司)直接和第一层ISP进行链接</span></li><li><span>ICP(Internet Content Provider):互联网内容提供商,不提供接入服务</span></li><li><span>在低层次的ISP可以解决的问题就不进入上一层进行解决，将大量的流量分流。</span></li></ol><p><img src="Overview.assets/5.png" referrerpolicy="no-referrer"></p><h1><a name="osi-reference-model-open-system-interconnection" class="md-header-anchor"></a><span>OSI Reference Model (Open System Interconnection)</span></h1><h2><a name="概述" class="md-header-anchor"></a><span>概述</span></h2><ol><li><span>国际标准化组织(ISO，International Organization for Standardization)提出</span></li><li><span>帮助网络建设者实现可以通信和协同工作的网络模型</span></li><li><span>描述信息或数据如何从一台计算机通过网络移动到另一台计算机</span></li><li><span>分层通信过程，每一个层次都有一个确定的任务。</span></li></ol><h2><a name="层次模型" class="md-header-anchor"></a><span>层次模型</span></h2><p><img src="Overview.assets/8.png" referrerpolicy="no-referrer"></p><blockquote><p><span>OSI是7层网络模型</span></p></blockquote><figure><table><thead><tr><th><span>层次</span></th><th><span>特点</span></th><th><span>关键字</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><span>物理层</span></td><td><span>二进制传输</span></td><td><span>信号和介质</span></td><td><span>属于数据流层</span></td></tr><tr><td><span>数据链路层</span></td><td><span>介质访问</span></td><td><span>帧和介质访问控制</span></td><td><span>属于数据流层</span></td></tr><tr><td><span>网络层</span></td><td><span>路径选择</span></td><td><span>路径选择，最优路径</span></td><td><span>属于数据流层</span></td></tr><tr><td><span>传输层</span></td><td><span>终端到终端通信</span></td><td><span>可靠性，流控制，错误纠正</span></td><td><span>属于数据流层</span></td></tr><tr><td><span>会话层</span></td><td><span>进程之间通信如何用户交流</span></td><td><span>对话和交流</span></td><td><span>属于应用层</span></td></tr><tr><td><span>展示层</span></td><td><span>展示</span></td><td><span>标准</span></td><td><span>属于应用层</span></td></tr><tr><td><span>应用层</span></td><td><span>给用户展示交互接口</span></td><td><span>浏览</span></td><td><span>属于应用层</span></td></tr></tbody></table></figure><h2><a name="为什么设计层次模型" class="md-header-anchor"></a><span>为什么设计层次模型?</span></h2><ol><li><span>降低复杂度，使用分解法来进行操作。</span></li><li><span>标准化接口，每层和每层之间标准化处理。</span></li><li><span>促进(Facilitate)模块化工程，保证各层之间可以相对独立的进行发展。</span></li><li><span>确保交互操作的技术，可以用不同网络程序，但是都用一样的低层。</span></li><li><span>加速(Accelerate)发展，各层的公司只要关注本层的即可。</span></li><li><span>简化教学和学习。</span></li></ol><h2><a name="osi-43" class="md-header-anchor"></a><span>OSI 4+3</span></h2><p><img src="Overview.assets/9.png" referrerpolicy="no-referrer"></p><blockquote><p><span>最高3层被我们记为应用层，因为他们处理了用户接口，数据格式和应用权限</span></p></blockquote><p><img src="Overview.assets/10.png" referrerpolicy="no-referrer"></p><blockquote><p><span>底下四层被我们称数据流层，因为他们控制着通过网络传输的数据信息</span></p><ul><li><span>这部分由硬件和网络操作系统一起完成</span></li><li><span>计算机网络主要讲的是这下四层</span></li></ul></blockquote><h2><a name="各层次介绍" class="md-header-anchor"></a><span>各层次介绍</span></h2><ol><li><span>下层会为上层提供服务，上层会向下层请求服务。</span></li><li><span>考试OSI分层情况只有7层和4层的两种情况。</span></li></ol><h3><a name="layer-1-the-physical-layer-物理层" class="md-header-anchor"></a><span>Layer 1: The Physical Layer 物理层</span></h3><ol><li><span>关键词：</span><strong><span>信号和介质</span></strong></li><li><span>定义终端系统(包括媒体)之间链路的电气和功能规范(specifications)</span></li><li><span>定义电压电平(voltage levels)、电压变化的定时(timing of voltage changes)、物理数据速率、最大传输距离、物理连接器和其他类似属性。(主要是定义了一些关键属性)</span></li><li><span>特点:对于信号不管理，对于信号正确性不做判断，只传递信号。</span></li></ol><h3><a name="layer-2the-data-link-layer-数据链路层" class="md-header-anchor"></a><span>Layer 2：The Data Link Layer 数据链路层</span></h3><ol><li><span>关键词:</span><strong><span>帧和介质访问控制</span></strong><span> </span></li><li><span>通过物理链路提供</span><strong><span>可靠</span></strong><span>的数据传输</span></li><li><span>涉及物理(而不是逻辑)寻址、网络拓扑、网络访问、错误通知、帧的有序传递和流控制，调节链路使用(涉及到一系列电路控制)</span></li><li><span>和第一层区别:需要检查电信号的正确性，点对点的线路的链接，比如A-B之间的链接</span></li><li><span>几个数据链路层:A-B,B-C,如果在两个链路则两个，反之则一个</span></li></ol><h3><a name="layer-3the-network-网络层" class="md-header-anchor"></a><span>Layer 3：The NetWork 网络层</span></h3><ol><li><p><span>关键词:</span><strong><span>路径选择，最优路径</span></strong><span>，基于逻辑IP地址的路径选择、路由和寻址，第三层要基于protocol生成路由表。</span></p></li><li><p><span>在路由发生的两个终端系统之间提供连接和路径选择</span></p></li><li><p><span>它们(终端设备)可能位于地理上(geographically)分离的网络上</span></p></li><li><p><span>和第二层区别:</span></p><ul><li><span>第二层只涉及到物理链路上点对点</span></li><li><span>第三层上实现的是很多链路上的数据连通和传输。可以跨很远，在广域网上进行链路控制(逻辑电路控制)。</span></li></ul></li><li><p><span>IP地址:逻辑地址，由本层分发IP地址。</span></p></li><li><p><span>基于packet进行逻辑数据的管理。</span></p></li></ol><h3><a name="layer-4the-transport-layer-运输层" class="md-header-anchor"></a><span>Layer 4：The Transport Layer 运输层</span></h3><ol><li><p><span>关键词:</span><strong><span>可靠性，流控制，错误纠正</span></strong></p></li><li><p><span>将数据分段并重新组合(reassembles)为数据流</span></p></li><li><p><span>关心如何在网络上实现可靠的传输</span></p></li><li><p><span>负责终端结点之间的可靠网络通信，并为虚拟电路的建立、维护和终止、传输故障检测和恢复以及信息流控制提供机制</span></p></li><li><p><span>和第三层区别:</span></p><ul><li><span>第三层实现设备到设备之间的连接，但是我们的操作系统是分时操作系统，需要网络系统进行分时处理，保证为对应的数据进程转发正确的数据。</span></li><li><span>复杂数据校验交给终端设备，而不是中间设备，中间设备能够完成转发即可，降低工程量</span></li><li><span>数据错误:请求第三层(下层)重传</span></li><li><span>互相协商:调整数据传输效率</span></li></ul></li></ol><h3><a name="layer-5the-session-layer-会话层" class="md-header-anchor"></a><span>Layer 5：The Session Layer 会话层</span></h3><ol><li><p><span>关键词:</span><strong><span>对话和交流</span></strong></p></li><li><p><span>建立、管理和终止通信主机之间的会话</span></p></li><li><p><span>同步表示层实体之间的对话框并管理其数据交换</span></p></li><li><p><span>提供高效的数据传输、服务类别以及会话、表示和应用层问题的异常报告</span></p></li><li><p><span>管理表示层实体之间的数据交换</span></p></li><li><p><span>和前四层相比:</span></p><ul><li><span>前四层不能处理具体的细节，所以需要我们在应用程序中完成应用的会话管理。</span></li><li><code>checkpoint</code><span>:在相应时间检查数据是否同步。</span></li><li><span>多进程的逻辑控制。</span></li></ul></li></ol><h3><a name="the-layer-6the-presentation-layer-表示层" class="md-header-anchor"></a><span>The Layer 6:The Presentation Layer 表示层</span></h3><ol><li><span>关键词:</span><strong><span>标准</span></strong><span>，不同标准有可能出现歧义</span></li><li><span>确保一个系统的应用层发送的信息可以被另一个系统的应用层读取</span></li><li><span>使用通用数据表示格式在多个数据表示格式之间转换</span></li><li><span>关注数据结构和数据传输语法(syntax)的协商</span></li><li><span>负责</span><mark><span>压缩</span></mark><span>和</span><mark><span>加密</span></mark><span>，防止泄密事情的出现。</span></li></ol><h3><a name="layer-7-the-application-layer-应用层" class="md-header-anchor"></a><span>Layer 7: The Application Layer 应用层</span></h3><ol><li><span>关键词:</span><strong><span>浏览</span></strong><span>，主要处理用户界面，将操作封装成机器可以理解的形式</span></li><li><span>最接近用户的一层</span></li><li><span>为用户应用程序提供网络服务</span></li><li><strong><span>不向任何其他OSI层提供服务</span></strong></li></ol><h2><a name="protocols-on-iso-layers-iso模型下对应的协议内容" class="md-header-anchor"></a><span>Protocols on ISO layers ISO模型下对应的协议内容</span></h2><p><img src="Overview.assets/11.png" referrerpolicy="no-referrer"></p><h2><a name="数据封装-data-encapsulation" class="md-header-anchor"></a><span>数据封装 Data Encapsulation</span></h2><p><img src="Overview.assets/12.png" referrerpolicy="no-referrer"></p><blockquote><p><span>5层划分不是实际标准，只是教学用标准</span></p></blockquote><h3><a name="osi五层划分" class="md-header-anchor"></a><span>OSI五层划分:</span></h3><ul><li><span>上三层:第五层，依据这三层其实是我们写的网络程序涵盖的</span></li><li><span>传输层</span></li><li><span>网络层</span></li><li><span>数据链路层</span></li><li><span>物理层</span></li></ul><h3><a name="数据封装过程" class="md-header-anchor"></a><span>数据封装过程</span></h3><ul><li><span>5-&gt;4:添加首部H5，应用程序数据作为数据部分</span></li><li><span>4-&gt;3:添加首部H4，第五层的作为数据部分</span></li><li><span>3-&gt;2:添加首部H3，第四层的作为数据部分</span></li><li><span>2-&gt;1:添加首部H2和尾部T2(校验位)，第三层的作为数据部分</span></li><li><span>1:转成比特流进行发送</span></li><li><img src="Overview.assets/13.png" referrerpolicy="no-referrer"></li></ul><h2><a name="peer-to-peer-communications-点对点通信" class="md-header-anchor"></a><span>Peer-to-Peer Communications 点对点通信</span></h2><ol><li><p><span>各层之中交换的信息的类型是不同的</span></p></li><li><p><span>不同层之间是无法完成正常通信的，也就是不能够理解的。</span></p></li><li><p><span>现实场景:公司A和公司B签订合同，公司A的CEO对应应用层，公司B的CEO也对应应用层，传输纸质合同，通过快递来传输</span></p><ul><li><span>A公司由秘书来起草具体的合同，之后快递工作交给收发室来传递，收发室找快递公司来完成具体快递等等。快递公司收到之后交给本地的集散点，然后通过具体的手段进行传递</span></li><li><span>收件人可以使对应的科室</span></li><li><span>上述描述了两台主机之间进行交互的过程</span></li></ul></li></ol><h1><a name="计算机网络基本概念" class="md-header-anchor"></a><span>计算机网络基本概念</span></h1><h2><a name="数据" class="md-header-anchor"></a><span>数据</span></h2><ol><li><strong><span>数据按位(1和0)发送</span></strong><span>。</span></li><li><strong><span>数据不是信息本身</span></strong><span>，不同方式解析数据会是不同信息，比如UTF-8和GDK解码是不同的，数据都是0-1序列，需要按照一定编码格式翻译转码才成为信息。</span></li><li><span>数据是一种信息的</span><strong><span>编码形式</span></strong><span>，它是一系列电脉冲/光信号，信息被传送到其中以便发送。</span></li></ol><h3><a name="数据报-datagram" class="md-header-anchor"></a><span>数据报 Datagram</span></h3><ol><li><p><span>为了传输，计算机数据常常被分成容易传输的小单元。</span></p><ul><li><span>使用OSI模型，这些单元可以称为包、帧或段(Packets, Frames, and Segments)。</span></li><li><span>网络层为 </span><code>packets</code><span> </span><mark><span>报文</span></mark><span>，数据链路层为 </span><code>frames</code><span> </span><mark><span>帧</span></mark><span>，传输层为 </span><code>segments</code><span> </span><mark><span>段</span></mark><span>。</span></li></ul></li><li><p><strong><span>为什么使用数据包？</span></strong></p><ul><li><span>计算机可以轮流发送数据包，分时段处理不同报文，使得多进程处理事务。</span></li><li><span>如果数据包丢失，则只需重新传输少量数据。TCP/IP下，我们分组传输，防止链路故障带来的问题。过大数据段会影响我们的重传、</span></li><li><span>数据可以采用不同的路径，每个数据包可以单独传输。</span></li></ul></li><li><p><span>不同OSI层次使用不同传输形式，在不同层次数据被称为不同的单元名称。</span></p></li></ol><figure><table><thead><tr><th><span>层</span></th><th><span>单元英文</span></th><th><span>单元中文</span></th></tr></thead><tbody><tr><td><span>传输层</span></td><td><span>segments</span></td><td><span>段</span></td></tr><tr><td><span>网络层</span></td><td><span>packets</span></td><td><span>报文</span></td></tr><tr><td><span>数据链路层</span></td><td><span>frames</span></td><td><span>帧</span></td></tr></tbody></table></figure><h2><a name="协议-protocol" class="md-header-anchor"></a><span>协议 Protocol</span></h2><ol><li><p><span>不同类型的计算机系统可以进行通信。通过不同通道，来完成对应的通信。</span></p></li><li><p><span>所有设备必须使用相同的&quot;语言&quot;或使用相同的协议(使用相同的规则)。</span></p><ul><li><span>上下文处理关系</span></li><li><span>单词:可以理解成为报文</span></li></ul></li></ol><h2><a name="源地址和目标地址" class="md-header-anchor"></a><span>源地址和目标地址</span></h2><ol><li><span>源地址指定发送数据包的计算机的标识。</span></li><li><span>目标地址指定接收数据包的计算机的标识。</span></li><li><span>通信往往是弱联系，要求报文携带源和目的地，以便于完成校验工作，可以在不提前通知的情况下进行通知。</span></li><li><span>存在有效性的损失，因为source和destination是实际无用的信息，但是这是不可避免的</span></li></ol><h2><a name="传输介质" class="md-header-anchor"></a><span>传输介质</span></h2><ol><li><p><span>介质是数据包传输所通过的介质</span></p></li><li><p><span>传输方式</span></p><ol><li><span>电缆方式</span></li><li><span>同轴电缆方式</span></li><li><span>双绞线方式</span></li><li><span>光缆方式：相对比较稳定，高速率传输都是用光缆。</span></li><li><span>空气方式（无线方式）</span></li></ol></li></ol><h2><a name="数据带宽bandwith" class="md-header-anchor"></a><span>数据带宽(BandWith)</span></h2><ol><li><span>数据带宽使用来衡量在一段给定时间下有多少信息可以从一段流动到另一端。</span></li></ol><p><img src="Overview.assets/7.png" referrerpolicy="no-referrer"></p><ol start='2' ><li><p><span>带宽是传输能力的</span><strong><span>上限</span></strong><span>。</span></p><ul><li><span>单位:bps,计算时注意要将字转换为位。</span></li><li><span>相对比较理想。</span></li></ul></li></ol><h2><a name="通量thoughput" class="md-header-anchor"></a><span>通量(Thoughput)</span></h2><ol><li><span>实际被度量的在特定时间情况下的数据带宽</span></li><li><span>Throughput &lt;= Bandwidth 通量小于等于带宽</span></li><li><span>一般是传送一个大的文件来进行计算出，实际的通量</span></li></ol><h1><a name="tcpip-model" class="md-header-anchor"></a><span>TCP/IP Model</span></h1><h2><a name="概述-n1958" class="md-header-anchor"></a><span>概述</span></h2><ol><li><p><span>美国国防部(DoD,Department of Defense)创建了TCP/IP参考模型</span></p></li><li><p><span>国防部希望其数据包在</span><strong><span>任何情况</span></strong><span>下，每次都能从一个点传输到另一个点。</span></p></li><li><p><span>它带来了TCP/IP模型的创建</span></p></li><li><p><span>TCP/IP模式已经成为互联网发展的标准</span></p></li><li><p><span>TCP/IP model只有</span><strong><span>四个</span></strong><span>层。</span></p><ul><li><span>应用层</span></li><li><span>传输层</span></li><li><span>互联网层</span></li><li><span>网络接入层</span></li></ul></li><li><p><code>TCP</code><span>: Transmission Control Protocol</span></p></li></ol><p><img src="Overview.assets/14.png" style="zoom:33%;" /></p><h2><a name="各层次介绍-n690" class="md-header-anchor"></a><span>各层次介绍</span></h2><h3><a name="第四层application-layer-应用层" class="md-header-anchor"></a><span>第四层：Application Layer 应用层</span></h3><ol><li><span>处理高级协议、表示(representation)、编码(encoding)和会话控制(session control)问题，包含7层上三层:应用层、表示层、会话层的全部功能</span></li><li><span>TCP/IP将所有与应用程序相关的问题合并到一个层中，并确保将这些数据正确打包到下一层。</span></li></ol><h3><a name="第三层transport-layer-传输层" class="md-header-anchor"></a><span>第三层：Transport Layer 传输层</span></h3><ol><li><p><span>处理服务质量的可靠性、流程控制和错误纠正问题。</span></p><ul><li><span>传输控制协议(TCP, Transmission Contol Protocol):代价比较大，效率比较低</span></li><li><span>用户数据报协议(UDP, User Datagram Protocol)</span></li><li><span>它将应用层信息打包成称为段的单元</span></li></ul></li><li><p><span>对应OSI的第4层：传输层</span></p></li></ol><h3><a name="第二层internet-layer-互联网层" class="md-header-anchor"></a><span>第二层：Internet Layer 互联网层</span></h3><ol><li><span>目的：从互联网上的任何网络发送源包，使它们独立于路径和网络到达目的地</span></li><li><span>最佳路径确定和分组交换发生在这一层</span></li><li><span>网际互联协议(IP,Internet protocol)</span></li><li><span>和OSI的第三层：网络层对应，报文从一方发送给另一方，报文传输经过路由器进行路径选择，</span></li></ol><h3><a name="第一层network-access-layer-网络接入层" class="md-header-anchor"></a><span>第一层：Network Access Layer 网络接入层</span></h3><ol><li><p><span>也称为主机到网络层。</span></p><ul><li><span>合并了OSI下面两层:物理层和数据链路层</span></li><li><span>完成物理实现和物理介质控制</span></li></ul></li><li><p><span>它涉及到IP数据包实际建立一个物理链路，然后再建立另一个物理链路所需的所有问题。</span></p></li><li><p><span>它包括局域网和广域网的技术细节，以及OSI物理层和数据链路层的所有细节。</span></p></li></ol><h2><a name="常见tcpip协议" class="md-header-anchor"></a><span>常见TCP/IP协议</span></h2><p><img src="Overview.assets/15.png" referrerpolicy="no-referrer"></p><figure><table><thead><tr><th><span>协议名称</span></th><th><span>协议全称</span></th><th><span>中文名</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><span>FTP</span></td><td><span>File Transfer Protocol</span></td><td><span>文件传输协议</span></td><td><span>-</span></td></tr><tr><td><span>HTTP</span></td><td><span>Hypertext Transfer Protocol</span></td><td><span>超文本传输协议</span></td><td><span>主要用于浏览器</span></td></tr><tr><td><span>SMTP</span></td><td><span>Simple Mail Transfer protocol</span></td><td><span>简单邮件发送协议</span></td><td><span>注意是发送</span></td></tr><tr><td><span>DNS</span></td><td><span>Domain Name System</span></td><td><span>域名解析系统</span></td><td><span>将域名解析成IP地址</span></td></tr><tr><td><span>UDP</span></td><td><span>User Datagram Protocol</span></td><td><span>用户数据报协议</span></td><td>&nbsp;</td></tr><tr><td><span>TFTP</span></td><td><span>Trivial File Transfer Protocol</span></td><td><span>普通文件传输协议</span></td><td><span>基于UDP，在局域网发送，关于较小的文件的发送</span></td></tr></tbody></table></figure><ol><li><span>应用需要可靠传输:TCP服务,应用需要速率:UDP服务</span></li></ol><h2><a name="tcpip-模型-和-osi-模型的相似点" class="md-header-anchor"></a><span>TCP/IP 模型 和 OSI 模型的相似点</span></h2><p><img src="Overview.assets/16.png" referrerpolicy="no-referrer"></p><ol><li><span>两者都有层次，网络专业人员需要知道两者，都通过分层的方案来完成具体的实现</span></li><li><span>两者都有应用层，尽管它们包含非常不同的服务</span></li><li><span>两者都有相同的传输层和网络层</span></li><li><span>假设采用分组交换(非电路交换)技术</span></li><li><span>OSI是基于报文交换来进行实现的，TCP/IP也是基于报文交换来完成实现的。</span></li></ol><h2><a name="tcpip-模型-和-osi-模型的不同点" class="md-header-anchor"></a><span>TCP/IP 模型 和 OSI 模型的不同点</span></h2><p><img src="Overview.assets/16.png" referrerpolicy="no-referrer"></p><ol><li><span>TCP/IP看起来更简单，因为它有更少的层</span></li><li><strong><span>TCP/IP协议是Internet发展的标准，因此TCP/IP模型正是因为它的协议才获得了可信性。</span></strong></li><li><span>通常网络不是建立在OSI协议之上的，即使OSI模型被用作指南。</span></li><li><strong><span>TCP/IP标准是大家都在使用的标准的。(实施标准)</span></strong><span>，5层和7层都只是讲课使用的</span></li><li><span>本课程我们一般使用</span><strong><span>5层</span></strong><span>来进行分割讲解。</span></li></ol><h1><a name="网络拓扑" class="md-header-anchor"></a><span>网络拓扑</span></h1><blockquote><p><span>定义网络结构</span></p></blockquote><h2><a name="物理拓扑" class="md-header-anchor"></a><span>物理拓扑</span></h2><p><span>导线(介质)的实际布局</span></p><ul><li><span>总线、星形、环形、扩展星形、分层(树形)、渔网型(mesh)</span></li><li><span>如何把Node具体连接起来</span></li></ul><p><img src="Overview.assets/image-20210629092520439.png" alt="image-20210629092520439" style="zoom:67%;" /></p><h2><a name="逻辑拓扑" class="md-header-anchor"></a><span>逻辑拓扑</span></h2><p><span>定义主机如何访问资源，主要是指如何在逻辑上如何控制网络</span></p><ul><li><span>令牌传递，使用token来获取通信的权利</span></li><li><span>主要涉及到管理介质如何被访问</span></li></ul><h2><a name="局域网拓扑特点" class="md-header-anchor"></a><span>局域网拓扑特点</span></h2><p><span>大部分时间是没有人发送数据，但是一旦发送就会有很多数据要发送。(令牌环循环不太适合)</span></p><h2><a name="各种拓扑模型" class="md-header-anchor"></a><span>各种拓扑模型</span></h2><h3><a name="bus-总线型拓扑" class="md-header-anchor"></a><code>Bus</code><span> 总线型拓扑</span></h3><ol><li><p><span>物理角度:每个主机都连接到一条公用线(总线)。</span></p><ul><li><span>优点：所有主机都可以直接通信。</span></li><li><span>缺点：电缆断开会使主机彼此断开连接。</span></li><li><span>也就是说总线是很重要的，总线一旦断开是不能够通信的，也是不可以分成多段总线进行处理(在未处理的总线上会在断开的地方，反射电信号，形成电路震荡)</span></li></ul></li><li><p><span>逻辑角度：每个网络设备都可以看到来自所有其他设备的所有信号，实际上是广播式传播</span></p></li><li><p><span>优点:比较简单，所有的设备都可以监听到总线的信号。</span></p></li><li><p><span>缺点:</span></p><ol><li><span>信号冲突，需要进行复杂的介质访问权限控制来保证通信正常</span></li><li><span>如果一处断开，则全部无法进行网络传输</span></li></ol></li></ol><h3><a name="ring-环形拓扑" class="md-header-anchor"></a><span>Ring 环形拓扑</span></h3><h4><a name="物理角度" class="md-header-anchor"></a><span>物理角度</span></h4><ul><li><span>所有的设备直接首尾相连，组成一个菊花链(daisy-chain)</span></li><li><span>可以将信息传送给链上的所有的设备，但是一般是固定顺时针或者逆时针进行传输</span></li></ul><h4><a name="逻辑角度" class="md-header-anchor"></a><span>逻辑角度</span></h4><ul><li><span>为了使信息流动，每个站点必须将信息传递给其相邻的站点。</span></li><li><span>我们需要对于链路进行访问控制，防止很多设备同时使用环，我们使用token来进行控制访问权力</span></li></ul><ol><li><span>缺点:环上只要有一个地方断开就会破坏整个环</span></li><li><span>令牌环拓扑主要用于控制领域，比较适用于实时系统的处理</span></li></ol><h3><a name="dual-ring-双环拓扑" class="md-header-anchor"></a><span>Dual Ring 双环拓扑</span></h3><h4><a name="物理视角" class="md-header-anchor"></a><span>物理视角：</span></h4><ul><li><span>双环拓扑结构与环拓扑结构相同，只是有第二个冗余环</span><strong><span>连接相同</span></strong><span>的设备。</span></li></ul><h4><a name="逻辑视角" class="md-header-anchor"></a><span>逻辑视角：</span></h4><ul><li><span>双环拓扑就像两个独立的环，同一时间只有一个环被应用。</span></li><li><span>有token令牌才有发送权力发送信息(使用总线)。</span></li></ul><h4><a name="特点" class="md-header-anchor"></a><span>特点</span></h4><ol><li><span>Eg.优先使用外环，如果外环出现物理错误，则切换到内环上使用，并且对外环进行物理修复。</span></li><li><span>双环拓扑是指一个结点有两个点，同时只能一个环在传输信息，两个环的传输时的方向是不能确定的。</span></li></ol><h4><a name="优点" class="md-header-anchor"></a><span>优点</span></h4><p><span>提供可靠性和灵活性。</span></p><h3><a name="star-星型拓扑" class="md-header-anchor"></a><span>Star 星型拓扑</span></h3><h4><a name="物理视角-n884" class="md-header-anchor"></a><span>物理视角</span></h4><p><span>星型拓扑结构有一个中心节点，所有的链路都从它辐射(radiating)出去。</span></p><h4><a name="逻辑视角-n886" class="md-header-anchor"></a><span>逻辑视角</span></h4><p><span>所有信息的流动将通过一个设备。</span></p><h4><a name="优点-n888" class="md-header-anchor"></a><span>优点</span></h4><p><span>它允许所有其他节点相互通信，方便。出于安全或限制访问的原因，它也可能是可取的</span></p><h4><a name="缺点" class="md-header-anchor"></a><span>缺点</span></h4><p><span>如果中心节点出现故障，整个网络就会断开连接。根据使用的网络设备类型，冲突可能是一个问题，中心点会有很大的负担，并且容易造成通信阻塞。</span></p><h4><a name="扩展星型拓扑" class="md-header-anchor"></a><span>扩展星型拓扑</span></h4><p><span>设置次级中心结点:和Internet的层次结点类似</span></p><h3><a name="treehierarchical-树形拓扑结构" class="md-header-anchor"></a><span>Tree(Hierarchical) 树形拓扑结构</span></h3><h4><a name="特点-n2062" class="md-header-anchor"></a><span>特点</span></h4><p><span>树拓扑使用一个主干节点(Trunk Node)，从该节点分支到其他节点。</span></p><ul><li><span>二叉树(每个节点分成两个链接)</span></li><li><span>主干树(主干有分支节点，其上挂有链接)。</span></li></ul><h4><a name="物理观点" class="md-header-anchor"></a><span>物理观点</span></h4><p><span>主干是一条有几层分支的电线。</span></p><h4><a name="逻辑观点" class="md-header-anchor"></a><span>逻辑观点</span></h4><p><span>信息流是层次性的。</span></p><h4><a name="其他特性" class="md-header-anchor"></a><span>其他特性</span></h4><ol><li><span>在根一级数据结点可以对数据进行汇总和统计。</span></li><li><span>类似电信网络：中心点不仅仅是转存和发送，还要控制和统计，而星形拓扑是不需要控制统计的。</span></li><li><span>当前节点不能处理的部分，则交给父结点处理</span></li></ol><h3><a name="completemesh-渔网型拓扑" class="md-header-anchor"></a><span>Complete(Mesh) 渔网型拓扑</span></h3><h4><a name="物理视角-n915" class="md-header-anchor"></a><span>物理视角</span></h4><p><span>有明显的优点和缺点</span></p><h4><a name="逻辑角度-n917" class="md-header-anchor"></a><span>逻辑角度</span></h4><p><span>完整或网格拓扑的行为在很大程度上取决于所使用的设备。</span></p><h4><a name="优点-n919" class="md-header-anchor"></a><span>优点</span></h4><p><span>最大的连接性和可靠性。</span></p><h4><a name="缺点-n921" class="md-header-anchor"></a><span>缺点</span></h4><p><span>链接的媒体数量和到链接的连接数量变得非常庞大。</span></p><h4><a name="全连接拓扑" class="md-header-anchor"></a><span>全连接拓扑</span></h4><ul><li><span>缺点:成本高、路径选择多:添加选择最合理的路径的机制</span></li><li><span>优点:鲁棒性高，抗干扰能力强。</span></li></ul><p><span>常使用在比较使用重要的情况下:通常Internet就是使用Mesh的拓扑</span></p><h3><a name="cellular-蜂窝型拓扑" class="md-header-anchor"></a><span>Cellular 蜂窝型拓扑</span></h3><p><img src="Overview.assets/23.png" referrerpolicy="no-referrer"></p><h4><a name="物理视角-n935" class="md-header-anchor"></a><span>物理视角</span></h4><ul><li><span>蜂窝拓扑结构是用于无线技术的拓扑结构</span></li><li><span>有时接收节点移动(如手机)，有时发送节点移动(如卫星)</span></li></ul><h4><a name="逻辑视角-n942" class="md-header-anchor"></a><span>逻辑视角</span></h4><p><span>节点之间直接通信(尽管有时非常困难)，或者只与相邻的单元通信，这是</span><strong><span>非常低效</span></strong><span>的。</span></p><h4><a name="其他特性-n2068" class="md-header-anchor"></a><span>其他特性</span></h4><ol><li><p><span>每一个结点都是无线的连通方式:远结点需要进行转发</span></p></li><li><p><span>使用场景</span></p><ol><li><span>无线电话</span></li><li><span>卫星</span></li></ol></li></ol><h1><a name="network-devices-网络设备" class="md-header-anchor"></a><span>Network Devices 网络设备</span></h1><h2><a name="拓扑的局域网设备" class="md-header-anchor"></a><span>拓扑的局域网设备</span></h2><ol><li><span>Hosts(网络终端设备):主机设备直接连接到网段,网络边缘节点，比如打印机、计算机、服务器、传真机、复印机</span></li><li><span>Hosts(网络中间设备):主机不是任何层的一部分，但是OSI模型的功能是在主机内部的软件中执行的</span></li></ol><p><img src="Overview.assets/18.png" style="zoom:80%;" /></p><ol start='3' ><li><span>两者差别:网络终端设备可能工作在比较复杂的层次上，工作在多个层次上。</span></li></ol><h2><a name="nics---layer2-网卡-network-interface-controller网络终端设备" class="md-header-anchor"></a><span>NICs - Layer2 网卡 Network Interface Controller(网络终端设备)</span></h2><p><img src="Overview.assets/19.png" style="zoom:67%;" /></p><ol><li><p><span>携带称为MAC地址的唯一代码，固定地址，在芯片上</span></p></li><li><p><span>用于控制网络上主机的数据通信</span></p></li><li><p><span>将计算机产生的并行信号转换成串行格式通过网络发送</span></p></li><li><p><span>用于转换信号以及发送和接收比特的收发器</span></p></li><li><p><span>\提供主机对媒体的访问权限</span></p></li><li><p><span>为什么是第二层的设备:</span></p><ol><li><span>可以识别帧</span></li><li><span>帮助主机接入网络</span></li></ol></li><li><p><span>计算机母线:并行通信，网卡总线:串行通信，所以网卡需要完成两者之间的交换。</span></p></li><li><p><span>也是可以完成第一层的工作的</span></p></li></ol><p><img src="Overview.assets/20.png" style="zoom:67%;" /></p><h2><a name="media----layer-1-介质-网络中间设备" class="md-header-anchor"></a><span>Media – Layer 1 介质 网络中间设备</span></h2><ol><li><span>以位为单位携带信息流</span></li><li><span>信号从一个网络设备传送到另一个网络设备的方式</span></li><li><span>0-1信号变为电信号或者无线电波光信号等。</span></li></ol><h2><a name="repeaters----layer-1-中继器-网络中间设备" class="md-header-anchor"></a><span>Repeaters – Layer 1 中继器 网络中间设备</span></h2><ol><li><span>用于</span><strong><span>延长网络的长度</span></strong><span>，实现传输超出一段介质传输的介质</span></li><li><span>清除(Clean)、放大(Amplify)和重发(Resend)被长电缆削弱的信号</span></li><li><span>在比特级别重新生成(放大)和重定时网络信号(</span><strong><span>数字信号</span></strong><span>)，以允许它们在媒体上传播更长的距离</span></li><li><span>不执行筛选，无条件中继。</span></li></ol><h2><a name="hubs---layer-1-集线器-网络中间设备" class="md-header-anchor"></a><span>Hubs - Layer 1 集线器 网络中间设备</span></h2><ol><li><span>用于重新生成和重定时网络信号，连接多个端口，可以比repeaters做更多的事情</span></li><li><span>传播信号，无法筛选流量，无法确定最佳路径，经常用作网络中心结点，有时候被称为多端口中继器</span></li><li><span>逻辑拓扑上:总线方式连接，一个端口入，所有端口出</span></li><li><span>不允许总线上同时有两路信号进行传输</span></li><li><span>冲突域:可能出现冲突的区域，但是hubs不进行这些控制，而是由交换机或者路由器来完成控制,不能降低了冲突概率</span></li><li><span>而放大器方法的是模拟信号。</span></li></ol><h3><a name="中继器和集线器的不同" class="md-header-anchor"></a><span>中继器和集线器的不同</span></h3><ol><li><span>中继器通常只有两个端口，集线器通常有4到20个或更多端口。</span></li><li><span>中继器在一个端口上接收，在另一个端口上重复，而集线器在一个端口上接收，在所有其他端口上传输。</span></li><li><span>集线器最常见于以太网10Base T或100Base T网络中，最近已经不怎么使用（交换机便宜）</span></li><li><span>都是转发，都不做过滤功能</span></li><li><span>两个设备之间最多有4个hubs和bridge</span></li></ol><p><img src="Overview.assets/21.png" style="zoom: 50%;" /></p><h2><a name="bridges----layer-2-网桥-网络中间设备" class="md-header-anchor"></a><span>Bridges – Layer 2 网桥 网络中间设备</span></h2><ol><li><p><span>目的是在LAN上过滤流量，以保持本地流量，但允许连接到LAN的其他部分以定向到那里的流量</span></p></li><li><p><span>跟踪网桥两侧的MAC地址，并根据此MAC地址列表进行决策</span></p><ul><li><span>目的地址如果在同一端，就不进行转发(不必进行转发，MAC Table)</span></li><li><span>而在不同侧(不同的segments)就进行尽量向外转发</span></li></ul></li><li><p><span>比集线器更智能</span></p></li><li><p><span>收集并在段之间传递数据包</span></p></li><li><p><span>创建冲突域</span></p><ul><li><span>通过网桥划分冲突域</span></li><li><span>每个冲突域中都有一定的主机</span></li><li><span>第一层以上的设备才能划分冲突域</span></li></ul></li><li><p><span>维护地址表</span></p></li></ol><h2><a name="switches----layer-2-交换机-网络中间设备" class="md-header-anchor"></a><span>Switches – Layer 2 交换机 网络中间设备</span></h2><ol><li><span>用于集中连接，将集线器的连通性与桥梁的交通管制相结合</span></li><li><span>将帧从输入端口切换到输出端口，从而为每个端口提供全带宽</span></li><li><span>provide separate data paths 提供单独的数据路径</span></li><li><span>结合网桥和交换机的功能</span></li><li><span>为每个端口都配备Mac Table：如果找到匹配的情况，在将这两个端口建立临时链接</span></li><li><span>功能上:交换机的每个端口对应一个冲突域，和网桥是一样的。交换机和hubs相比，在物理和逻辑上都是星型拓扑。</span></li><li><span>目前主要都是基于交换机来进行实现的</span></li><li><span>不能做到网络逻辑划分，IP逻辑划分是路由器的事情</span></li></ol><h2><a name="routers----layer-3-路由器-网络中间设备" class="md-header-anchor"></a><span>Routers – Layer 3 路由器 网络中间设备</span></h2><ol><li><p><span>大型网络中重要的流量调节设备</span></p></li><li><p><span>根据网络地址进行决策：主要是进行网段的划分，根据网络地址(包含在IP地址中)进行转化</span></p></li><li><p><span>检查数据包(第3层数据)，为它们选择最佳路径，然后将其切换出正确的传出端口</span></p></li><li><p><span>两个主要目的：</span></p><ol><li><span>路径选择</span></li><li><span>将数据包切换到最佳路由</span></li></ol></li></ol><h2><a name="网络设备和osi层次模型演变evolution" class="md-header-anchor"></a><span>网络设备和OSI层次模型演变(Evolution)</span></h2><p><img src="Overview.assets/22.png" style="zoom: 67%;" /></p><ol><li><p><span>网络设备的工作层次和主机情况</span></p><ul><li><span>物理层:介质、repeaters、hubs</span></li><li><span>数据链路层:网桥、交换机、电路交换设备</span></li><li><span>网络层:路由器</span></li></ul></li><li><p><span>Host下层通过网卡进行实现，上层通过网络操作系统、应用实现</span></p></li><li><p><span>高层设备可以识别低层设备的信号，但是低层次是不能识别高层次的数据逻辑的</span></p></li></ol></div>
+</body>
+</html>
