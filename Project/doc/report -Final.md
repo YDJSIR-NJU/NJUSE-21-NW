@@ -262,7 +262,7 @@ HTTP客户端可以通过命令行发送请求报文、呈现响应报文，如�
 
 ​	<img src="https://se-hw.oss-cn-shanghai.aliyuncs.com/%E8%AE%A1%E7%BD%91%E5%A4%A7%E4%BD%9C%E4%B8%9A/%E8%AE%A1%E7%BD%91%E5%A4%A7%E4%BD%9C%E4%B8%9A%E6%88%AA%E5%9B%BE/js%20c.png" style="zoom:80%;" />
 
-	#### 图片类
+#### 图片类
 
 客户端请求`GET \images\1.jpg`，受到相应后将文件存到本地并用系统默认图片查看器打开。
 

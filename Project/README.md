@@ -1,7 +1,11 @@
 # WeDoRay_Socket
 > **Project of Internet Based Computing @ Software Institute, Nanjing University**
 >
-> ## 本项目仅包含HTTP GET请求的发起、响应以及长连接模型部分的实现，PUT和登录接口部分在这个仓库中： https://github.com/xlm12341/socket-HTTP_DEMO
+> 本项目仅包含HTTP GET请求的发起、响应以及长连接模型部分的实现，PUT和登录接口部分在这个仓库中： https://github.com/xlm12341/socket-HTTP_DEMO 
+>
+> **这两个项目必须用Oracle JDK 8跑，OpenJDK11和OracleJDK11都是不行的！**
+>
+> 不然的话HttpServer.class.getResourceAsStream(BIND_DIR + NOT_FOUND_RES)会返回空指针，无法读取到目录下的内容！
 
 
 
